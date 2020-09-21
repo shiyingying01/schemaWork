@@ -9,6 +9,7 @@ public class Schema {
     private  Set<FlagSchema> flagSchema;
 
     public Schema(Set<FlagSchema> flagSchema) {
+
         this.flagSchema = flagSchema;
     }
 
