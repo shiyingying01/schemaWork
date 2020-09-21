@@ -52,17 +52,17 @@ public class ArgsTest {
         assertTrue(keyValuePairs.contains(new KeyValuePair("l", "true")));
     }
 
-//    @Test
-//    public void should_Return_IntType_Value_When_Scan_GetValueOfFlag(){
-//
-//        Set<FlagSchema> flagSchemaSet = new HashSet<FlagSchema>();
-//        flagSchemaSet.add(new FlagSchema("p",Integer.TYPE));
-//        Schema schema = new Schema(flagSchemaSet);
-//
-//        String argsTest = "-l true -p 8080 -d usr/logs";
-//        Args args = new Args(argsTest,schema);
-//        Object value = args.getValueOf("p");
-//
-//        assertEquals(value,8080);
-//    }
+    @Test
+    public void should_Return_IntType_Value_When_Scan_GetValueOfFlag(){
+
+        Set<FlagSchema> flagSchemaSet = new HashSet<FlagSchema>();
+        flagSchemaSet.add(new FlagSchema("p",Integer.TYPE));
+        Schema schema = new Schema(flagSchemaSet);
+
+        String argsTest = "-l true -p 8080 -d usr/logs";
+        Args args = new Args(argsTest,schema);
+        Object value = args.getValueOf("p");
+
+        assertEquals(value,8080);
+    }
 }

@@ -6,13 +6,14 @@ package com.thoughtworks.basic.course;
 public class FlagSchema {
     private final String flag;
     private final Object type;
-    public FlagSchema(String flag, Class<Boolean> type) {
+    public FlagSchema(String flag, Object type) {
         this.flag = flag;
         this.type = type;
     }
 
 
     public Object getType(){
+
         return type;
     }
 
