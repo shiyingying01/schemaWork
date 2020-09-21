@@ -5,20 +5,26 @@ package com.thoughtworks.basic.course;
  */
 public class FlagSchema {
     private final String flag;
-    private final Object type;
-    public FlagSchema(String flag, Object type) {
+    private ValueFeature valueFeature;
+    public FlagSchema(String flag, ValueFeature valueFeature) {
         this.flag = flag;
-        this.type = type;
+//        this.type = type;
+        this.valueFeature = valueFeature;
     }
 
 
-    public Object getType(){
-
-        return type;
-    }
+//    public Object getType(){
+//
+//        return type;
+//    }
 
     public boolean equalsWith(String flag) {
             return flag.equalsIgnoreCase(this.flag);
 
+    }
+
+    public String getType() {
+        //return type;
+        return valueFeature.getType();
     }
 }

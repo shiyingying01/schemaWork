@@ -21,7 +21,7 @@ public class ArgsTest {
     public void should_return_string_when_scan_given_string(){
         //given
         Set<FlagSchema> flagSchemaSet = new HashSet<FlagSchema>();
-        flagSchemaSet.add(new FlagSchema("l",Boolean.TYPE));
+        flagSchemaSet.add(new FlagSchema("l",ValueFeature.BOOLEAN));
         Schema schema = new Schema(flagSchemaSet);
         String argsText = "-l true -p 8080 -d /usr/logs";
         //Args args = new Args(argsText);
@@ -42,7 +42,7 @@ public class ArgsTest {
     public void should_Return_String_When_Scan_Given_String(){
 
         Set<FlagSchema> flagSchemaSet = new HashSet<FlagSchema>();
-        flagSchemaSet.add(new FlagSchema("l",Boolean.TYPE));
+        flagSchemaSet.add(new FlagSchema("l",ValueFeature.BOOLEAN));
         Schema schema = new Schema(flagSchemaSet);
 
         String argsTest = "-l true -p 8080 -d usr/logs";
@@ -56,7 +56,7 @@ public class ArgsTest {
     public void should_Return_IntType_Value_When_Scan_GetValueOfFlag(){
 
         Set<FlagSchema> flagSchemaSet = new HashSet<FlagSchema>();
-        flagSchemaSet.add(new FlagSchema("p",Integer.TYPE));
+        flagSchemaSet.add(new FlagSchema("p",ValueFeature.INTEGER));
         Schema schema = new Schema(flagSchemaSet);
 
         String argsTest = "-l true -p 8080 -d usr/logs";

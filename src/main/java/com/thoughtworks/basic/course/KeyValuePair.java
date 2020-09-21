@@ -8,9 +8,10 @@ import java.util.Objects;
 
 public class KeyValuePair {
     private final String key;
-    private final String value;
+    //private final String value;
+    private final Object value;
 
-    public KeyValuePair(String key, String value) {
+    public KeyValuePair(String key, Object value) {
         this.key = key;
         this.value = value;
     }
@@ -33,7 +34,7 @@ public class KeyValuePair {
         return key;
     }
 
-    public String getValue() {
+    public Object getValue() {
         return value;
     }
 }

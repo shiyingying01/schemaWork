@@ -13,7 +13,7 @@ public class Schema {
         this.flagSchema = flagSchema;
     }
 
-    public Object getTypeOf(String flag) {
+    public String getTypeOf(String flag) {
         return flagSchema.stream()
                 .filter(x -> x.equalsWith(flag))
                 .findFirst()
