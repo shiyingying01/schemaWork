@@ -10,8 +10,10 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import static net.bytebuddy.matcher.ElementMatchers.is;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertThat;
 
 /**
  * Created by dell on 2020/9/18.
@@ -78,5 +80,19 @@ public class ArgsTest {
         Object value = args.getValueOf("d");
 
         assertEquals(value,"usr/logs");
+    }
+
+    @Test
+    public void should_throw_error_no_legal_when_repeat_flag() throws Exception {
+        Set<FlagSchema> flagSchemaSet = new HashSet<FlagSchema>();
+        Schema schema = new Schema(flagSchemaSet);
+        String argsTest = "-l true -l false";
+
+        try {
+            Args args = new Args(argsTest,schema);
+        } catch (Exception exception) {
+            System.out.println(exception.getMessage());
+            assertThat(exception.getMessage(), is("不允许输入重复flag"));
+        }
     }
 }
