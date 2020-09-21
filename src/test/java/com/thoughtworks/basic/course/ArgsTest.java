@@ -65,4 +65,18 @@ public class ArgsTest {
 
         assertEquals(value,8080);
     }
+
+    @Test
+    public void should_Return_StringType_When_Scan_Given_GetValueOfFlag(){
+
+        Set<FlagSchema> flagSchemaSet = new HashSet<FlagSchema>();
+        flagSchemaSet.add(new FlagSchema("d",ValueFeature.STRING));
+        Schema schema = new Schema(flagSchemaSet);
+
+        String argsTest = "-l true -p 8080 -d usr/logs";
+        Args args = new Args(argsTest,schema);
+        Object value = args.getValueOf("d");
+
+        assertEquals(value,"usr/logs");
+    }
 }
